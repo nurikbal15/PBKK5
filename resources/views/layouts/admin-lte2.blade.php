@@ -222,6 +222,8 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
+
+
 @include('layouts.includes.admin-lte2.script')
 </body>
 </html>

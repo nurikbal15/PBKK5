@@ -247,10 +247,19 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="{{ route('profile.edit') }}" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
-                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                    {{-- <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Sign out</a> --}}
+                    <form method="POST" style="background-color:#f5f4f5"  class="btn btn-default btn-flat action="{{ route('logout') }}">
+                        @csrf
+
+                        <x-dropdown-link :href="route('logout')"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();" style="font-size: 15px; color: #80827f">
+                            {{ __('Logout') }}
+                        </x-dropdown-link>
+                    </form>
                   </div>
                 </li>
               </ul>
